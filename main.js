@@ -3,7 +3,7 @@
 // Delete <Numero de Linea > Borra linea
 // Modify <Numero de linea> :<Nuevo texto>
 
-let saludo='... ::::';
+let saludo='Escribe |';
 let entrada=document.getElementById('entrada')
 let contenedor=document.getElementById('contenedor');
 let alertas=document.getElementById('alertas')
@@ -34,7 +34,7 @@ function enviar(entradaValor) {
   if (entradaValor==null) {
     entradaValor=entrada.value;
   }
-  console.log('entrada = '+entradaValor);
+  console.log('entrada = ' + entradaValor);
   
   let command=entradaValor.split(' ');
   if (entradaValor=="") {
@@ -66,7 +66,13 @@ function enviar(entradaValor) {
      contenedor.innerHTML += "<p><br><h2>Comandos</h2> <b> Delete all </b> > Borra todas las lineas<br> <b> Delete -Numero de Linea - </b> > Borra linea<br> <b> Modify -Numero de linea- :-Nuevo texto- </b></p>";
      
      
-   }else{
+   }else if(command[0]=='About'){
+    alertas.textContent='OK ::: Acerca de';
+    EscribeLineas();
+    contenedor.innerHTML += "<p><br><h1>Escribe |</h1> <b> By Alfabto Animation Studio </b><br> Diseñado y desarrollado por EddySantiago AB <br> Esta pequeña aplicación se empezó a crear en un Domingo en la mañana por aburrimiento probando Spck Editor a ver que salia, para desempolvar mis conocimientos en Javascript y css ... Me gusto lo que iba saliendo y luego de pulirlo un poco más, y más, aqui está, publicada y a espera de ver que más se puede mejorar. </p>";
+    
+    
+  }else{
     addLine(entrada.value)
     EscribeLineas();
     
@@ -88,6 +94,7 @@ function enviar(entradaValor) {
   console.log(entrada.value);
   
 }
+
 
 entrada.addEventListener("keyup", ({key}) => {
   if (key === "Enter") {
