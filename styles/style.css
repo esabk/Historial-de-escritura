@@ -4,6 +4,11 @@ body {
     font-size: 14px;
     font-family: monospace;
 }
+@media only screen and (min-width: 1500px) {
+  body{
+    padding: 20px 20vw;
+  }
+}
 #entrada{
   border: none;
   background-color:black;
@@ -35,6 +40,7 @@ body {
   overflow-y:scroll;
   scroll-behavior: smooth;
   text-align: center;
+ 
 
 }
 #alertas{
