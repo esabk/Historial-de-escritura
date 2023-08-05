@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Escribe..</title>
-  
-  <title>HTML</title>
+  <title>Escribe</title>
   
   <!-- HTML -->
   
@@ -33,21 +31,27 @@
 </head>
 
 <body id="principalUi">
-  <h1>Escribe |</h1>
-  <input value="Escribe aqui..." id="entrada"type="text" >
-  <input id="btn_enviar"onclick="enviar()" type="button" value="Escribir linea">
+  <h1><img height="24px" src="/android-icon-192x192.png" alt="" srcset="">Escribe</h1>
+  <div id="escribirLineaContenedor">
+    <input id="entrada"type="text" placeholder="Escribe aqui...">
+    <input id="btn_enviar"onclick="enviar()" type="button" value="Escribir linea">
+  </div>
   
   <div id="contenedor">
-      <textarea  id="l 0" class="linea"> Escribe , solo escribe, privado, simple y solo para ti... Nada se guarda, nada se comparte.</textarea>
+      <p class="linea"> Escribe , solo escribe, privado, simple. Nada se guarda, nada se comparte</p>
+      
   </div>
+  <p id="alertas">Aplicacion ha iniciado correctamente...</p>
 
   <!-- Los siguientes botones ejecutan comandos en #entrada -->
   <input id="btn_enviar"onclick="enviar('Delete all')" type="button" value="Eliminar lineas">
-  <input id="btn_enviar"onclick="enviar('Help')" type="button" value="Ver comandos">
-  <input id="btn_enviar"onclick="enviar('About')" type="button" value="Acerca de">
+  <input id="btn_enviar"onclick="help()" type="button" value="Ver comandos">
+  <input id="btn_enviar"onclick="about()" type="button" value="Acerca de">
+
   
-  <p id="alertas">Aplicacion ha iniciado correctamente...</p>
+  
   <!-- Project -->
   <script src="/js/main.js"></script>
+  <script src="/js/help.js"></script>
 </body>
 </html>

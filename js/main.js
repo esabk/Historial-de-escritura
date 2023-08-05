@@ -1,3 +1,6 @@
+// Code by Eddy Santiago AB
+// By Alfabto AS
+
 // Comandos
 // Delete all > Borra todas las lineas
 // Delete <Numero de Linea > Borra linea
@@ -8,12 +11,24 @@ let entrada=document.getElementById('entrada')
 let contenedor=document.getElementById('contenedor');
 let alertas=document.getElementById('alertas')
 let linea=document.getElementById("l 0");
-let lineas=['.::..:.:::::.:::.:...'];
+let lineas=[];
 
+//Agrega el texto de entrada a las lineas (Nueva linea).
 function addLine(value) {
   lineas.unshift(value);
 }
 
+// Muestra las lineas almacenadas en la variable lineas.
+function EscribeLineas() {
+  contenedor.innerHTML = '';
+  for (var i = 0; i < lineas.length; i++) {
+    contenedor.innerHTML += '<div id="lineaContenedor" ><i class="lineNumber">' +i+'  </i>'+' <textarea id="l '+i+'" class="linea">'+lineas[i]+'</textarea></div>';
+    linea=document.getElementById("l "+i);
+    linea.style.height = linea.scrollHeight+"px";
+  }
+}
+
+//Borra una linea especifica
 function deleteLine(index){
   if (index < lineas.length) {
     lineas.splice(index, 1);
@@ -22,6 +37,7 @@ function deleteLine(index){
   }
 }
 
+//Modifica una linea especifica 
 function modifyLine(index,value) {
   if (index < lineas.length) {
     lineas[index]=value;
@@ -30,6 +46,7 @@ function modifyLine(index,value) {
   }
 }
 
+//
 function enviar(entradaValor) {
   if (entradaValor==null) {
     entradaValor=entrada.value;
@@ -43,7 +60,7 @@ function enviar(entradaValor) {
     EscribeLineas();
     
   }else if(command[0]=="Delete" &&command[1]=='all'){
-    lineas=['.::..:.:::::.:::.:...'];
+    lineas=[];
     alertas.textContent='OK ::: Lineas eliminadas correctamente';
     EscribeLineas();
     
@@ -59,19 +76,7 @@ function enviar(entradaValor) {
       modifyLine(command[1],valor[1]);
       
       EscribeLineas();
-      entrada.value='';
-   }else if(command[0]=='Help'){
-     alertas.textContent='OK ::: Ayuda';
-     EscribeLineas();
-     contenedor.innerHTML += "<p><br><h2>Comandos</h2> <b> Delete all </b> > Borra todas las lineas<br> <b> Delete -Numero de Linea - </b> > Borra linea<br> <b> Modify -Numero de linea- :-Nuevo texto- </b></p>";
-     
-     
-   }else if(command[0]=='About'){
-    alertas.textContent='OK ::: Acerca de';
-    EscribeLineas();
-    contenedor.innerHTML += "<p><br><h1>Escribe |</h1> <b> By Alfabto Animation Studio </b><br> Diseñado y desarrollado por EddySantiago AB <br> Esta pequeña aplicación se empezó a crear en un Domingo en la mañana por aburrimiento probando Spck Editor a ver que salia, para desempolvar mis conocimientos en Javascript y css ... Me gusto lo que iba saliendo y luego de pulirlo un poco más, y más, aqui está, publicada y a espera de ver que más se puede mejorar. </p>";
-    
-    
+      entrada.value='';  
   }else{
     addLine(entrada.value)
     EscribeLineas();
@@ -80,14 +85,6 @@ function enviar(entradaValor) {
     entrada.value="";
   }
   
-  function EscribeLineas() {
-    contenedor.innerHTML = '';
-    for (var i = 0; i < lineas.length; i++) {
-      contenedor.innerHTML += '<div id="lineaContenedor" ><i class="lineNumber">' +i+'  </i>'+' <textarea id="l '+i+'" class="linea">'+lineas[i]+'</textarea></div>';
-      linea=document.getElementById("l "+i);
-      linea.style.height = linea.scrollHeight+"px";
-    }
-  }
   
   entrada.focus();
   console.log('btn ... click');
@@ -95,13 +92,14 @@ function enviar(entradaValor) {
   
 }
 
-
+//Escribe la linea al presionar enter (O aceptar en moviles).
 entrada.addEventListener("keyup", ({key}) => {
   if (key === "Enter") {
       enviar();
   }
 })
 
+//Modifica el texto de la linea conforme se escribe.
 contenedor.addEventListener("keyup", e => {
   linea.style.height="auto";
   linea.style.height = e.target.scrollHeight +'px';
@@ -112,8 +110,4 @@ contenedor.addEventListener("keyup", e => {
   index=id[1];
   modifyLine(index,linea.value);
   console.log(index+" Linea actualizada: "+ linea.value);
-  
-  
-
-  
 })
