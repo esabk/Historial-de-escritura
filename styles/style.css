@@ -58,7 +58,8 @@ body {
   padding: 2px;
   border-radius: 2px;
   text-align: center;
-  overflow:auto;
+  overflow:hidden;
+  height: 15px;
  
 }
 .lineNumber{
