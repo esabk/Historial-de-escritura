@@ -26,7 +26,7 @@ body {
   
 }
 #entrada:focus{
-  background-color: darkslategray;
+  background-color: rgb(40, 61, 61);
 }
 #btn_enviar{
   background-color: black;
@@ -34,10 +34,11 @@ body {
   border: none;
   border-radius: 2px;
   height: 27px;
- 
+  transition:all 200ms cubic-bezier(0.165, 0.84, 0.44, 1) ;
 }
 #btn_enviar:hover{
   cursor: pointer;
+  background-color:rgb(44, 75, 75);
 }
 
 #contenedor{
