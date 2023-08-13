@@ -22,7 +22,7 @@ function addLine(value) {
 function EscribeLineas() {
   contenedor.innerHTML = '';
   for (var i = 0; i < lineas.length; i++) {
-    contenedor.innerHTML += '<div id="lineaContenedor" ><i class="lineNumber">' +i+'  </i>'+' <textarea id="l '+i+'" class="linea">'+lineas[i]+'</textarea></div>';
+    contenedor.innerHTML += '<div id="lineaContenedor" ><i class="lineNumber">' +i+'  </i>'+' <textarea id="l '+i+'" class="linea">'+lineas[i]+'</textarea><input id="btn_enviar"onclick="deleteLineInLine(0)" type="button" value="Borrar"></div>';
     linea=document.getElementById("l "+i);
     linea.style.height = linea.scrollHeight+"px";
   }

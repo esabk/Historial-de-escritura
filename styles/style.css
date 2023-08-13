@@ -11,9 +11,10 @@ body {
 }
 #escribirLineaContenedor{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   gap: 10px;
+  margin-bottom: 10px;
 }
 #entrada{
   border: none;
@@ -67,8 +68,8 @@ body {
 }
 #lineaContenedor{
   display:flex;
-  justify-content: center;
   gap: 12px;
+  justify-content: space-around;
 }
 .linea{
   background-color: lightgray;
