@@ -36,10 +36,16 @@
     <input id="entrada"type="text" placeholder="Escribe aqui...">
     <input id="btn_enviar"onclick="enviar()" type="button" value="Escribir linea">
   </div>
+
+  <p id="entradaFormulaResultado">Resultado</p>
   
   <div id="contenedor">
-      <p class="linea"> Escribe , solo escribe, privado, simple. Nada se guarda, nada se comparte</p>
-      
+      <p > Escribe , solo escribe, privado, simple. Nada se guarda, nada se comparte</p>
+      <hr>
+      <h2>Novedades</h2>
+      <p><b>MODO FORMULA: </b>Activalo empezando a escribir = , Ejemplo: "=12+1"</p>
+      <p><b>Usa valores de otras lineas: </b>escribe la palabra "line" seguido del indice de linea, Ejemplo:"line0"</p>
+      <hr>
   </div>
   <p id="alertas">Aplicacion ha iniciado correctamente...</p>
 
@@ -53,6 +59,7 @@
   <!-- Project -->
   <script  src="/js/main.js" type="text/javascript"></script>
   <script src="/js/help.js" type="text/javascript"></script>
+  <script src="/js/entrada.js" type="text/javascript"></script>
   <script src="/js/deleteline.js" type="text/javascript"></script>
 </body>
 </html>

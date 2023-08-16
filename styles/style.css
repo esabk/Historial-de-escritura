@@ -3,6 +3,7 @@ body {
     padding: 20px;
     font-size: 14px;
     font-family: monospace;
+    user-select: none;
 }
 @media only screen and (min-width: 1500px) {
   body{
@@ -27,7 +28,13 @@ body {
   
 }
 #entrada:focus{
-  background-color: rgb(40, 61, 61);
+  background-color: rgb(20, 36, 36);
+}
+#entradaFormulaResultado{
+  height: 0;
+  transition: all 200ms;
+  overflow: hidden;
+  margin-left: 12vw;
 }
 #btn_enviar{
   background-color: black;
@@ -39,7 +46,7 @@ body {
 }
 #btn_enviar:hover{
   cursor: pointer;
-  background-color:rgb(44, 75, 75);
+  background-color:rgb(20, 36, 36);
 }
 
 #contenedor{

@@ -13,6 +13,7 @@ let alertas=document.getElementById('alertas')
 let linea=document.getElementById("l 0");
 let lineas=[];
 
+
 //Agrega el texto de entrada a las lineas (Nueva linea).
 function addLine(value) {
   lineas.unshift(value);
