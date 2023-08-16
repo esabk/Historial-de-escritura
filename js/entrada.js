@@ -24,7 +24,7 @@ entrada.addEventListener("keyup", e => {
         entrada.style.color="lawngreen";
         alertas.textContent="OK: Modo formula activo";
 
-        //Toma el valor de la linea escrita, palabra clave line
+        //Toma el resulatdo de la linea escrita, palabra clave line
         let buscarLine=entrada.value.lastIndexOf("line");
         if (buscarLine > 0) {
             let lineaindex=buscarLine+4;
@@ -36,6 +36,17 @@ entrada.addEventListener("keyup", e => {
                 
             }
         }
+        //Toma el contenido la linea , palabra clave LINE
+        buscarLine=entrada.value.lastIndexOf("LINE");
+        if (buscarLine > 0) {
+            let lineaindex=buscarLine+4;
+            let index = entrada.value[lineaindex];
+            let valor = lineas[index].replace("=","");  //Obtiene la linea en lineas
+            let lineaReplace="LINE"+entrada.value[lineaindex];
+            entrada.value=entrada.value.replace(lineaReplace,valor);  
+            
+        }
+        
         
         
         //Quita el = para poder evaluar y muestra el resultado
