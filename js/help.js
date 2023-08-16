@@ -7,5 +7,5 @@ function about(){
 function help(){
     alertas.textContent='OK ::: Ayuda';
     contenedor.innerHTML="";
-    contenedor.innerHTML += '<input id="btn_enviar"onclick="EscribeLineas()" type="button" value="Ver lineas"><p><br><h2>Comandos</h2> <b> Delete all </b> > Borra todas las lineas<br> <b> Delete -Numero de Linea - </b> > Borra linea<br> <b> Modify -Numero de linea- :-Nuevo texto- </b></p><br>';
+    contenedor.innerHTML += '<input id="btn_enviar"onclick="EscribeLineas()" type="button" value="Ver lineas"><p><br><h2>Comandos</h2><b>Modo fórmula</b> > Se activa empezando a escribir con = <br> <b> Delete all </b> > Borra todas las lineas<br> <b> Delete -Numero de Linea - </b> > Borra linea<br> <b> Modify -Numero de linea- :-Nuevo texto- </b></p><br>';
 }
