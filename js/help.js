@@ -1,6 +1,6 @@
 function about(){
     alertas.textContent='OK ::: Acerca de';
-    let version="1.4.5 - 08/2023";
+    let version="1.4.5.1 - 08/2023";
     contenedor.innerHTML="";
     contenedor.innerHTML+='<div><input id="btn_enviar"onclick="EscribeLineas()" type="button" value="Ver lineas"><br><div id="About"><br><img height="48px" src="../android-icon-192x192.png" alt="" srcset=""><h2>Escribe by Alfabto AS</h2> v'+version+' <br><br>Creado por Eddy Santiago AB <br><br><p>Esta pequeña aplicación la empezé a desarrollar un domingo en la mañana por aburrimiento probando Spck Editor en el movil a ver que salia, desempolvando mis conocimientos en Javascript y css ... <br><br> Me gusto lo que iba saliendo y luego de irla mejorando; aqui está, publicada y a espera de nuevas mejoras. </p></div></div>';
 }
