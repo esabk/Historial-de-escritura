@@ -12,17 +12,19 @@ let contenedor=document.getElementById('contenedor');
 let alertas=document.getElementById('alertas')
 let linea=document.getElementById("l 0");
 let lineas=[];
+let principalUi = document.getElementById("principalUi");
 
 
 //Agrega el texto de entrada a las lineas (Nueva linea).
 function addLine(value) {
-  lineas.unshift(value);
+  lineas.push(value);
 }
 
 // Muestra las lineas almacenadas en la variable lineas.
 function EscribeLineas() {
   contenedor.innerHTML = '';
-  for (var i = 0; i < lineas.length; i++) {
+  for (let i = lineas.length-1; i >= 0 ; i--) {
+    console.log(i);
     contenedor.innerHTML += '<div id="lineaContenedor" ><b class="lineNumber">line ' +i+'  </b>'+'<textarea id="l '+i+'" class="linea">'+lineas[i].replace("=","")+'</textarea><input id="btn_enviar"onclick="deleteLineInLine('+i+')" type="button" value="X"></div>';
     linea=document.getElementById("l "+i);
     linea.style.height = linea.scrollHeight+"px";

@@ -39,21 +39,28 @@
 
   <p id="entradaFormulaResultado">Resultado</p>
   
-  <div id="contenedor">
+  <div class="contenedor" id="contenedor">
       <p > Escribe , solo escribe, privado, simple. Nada se guarda, nada se comparte</p>
       <hr>
       <h2>Novedades</h2>
       <p><b>MODO FORMULA: </b>Activalo empezando a escribir = , Ejemplo: "=12+1"</p>
       <p><b>Usa valores de otras lineas: </b>escribe la palabra "line" seguido del indice de linea, Ejemplo:"line0"</p>
+      <h2>Mejoras</h2>
+      <p><b>Nueva interfaz de usuario: </b>Más limpia y legible.</p>
+      <p><b>Nuevo orden de lineas: </b>La ultima linea escrita se guarda despues de la anterior.</p>
+      <p>... Se hieron mejoras y corrección de fallos menores.</p>
+      
       <hr>
   </div>
   <p id="alertas">Aplicacion ha iniciado correctamente...</p>
 
   <!-- Los siguientes botones ejecutan comandos en #entrada -->
-  <input id="btn_enviar"onclick="enviar('Delete all')" type="button" value="Eliminar lineas">
-  <input id="btn_enviar"onclick="help()" type="button" value="Ver comandos">
-  <input id="btn_enviar"onclick="about()" type="button" value="Acerca de">
-
+  <div class="mini-contenedor">
+    <input id="btn_enviar"onclick="enviar('Delete all')" type="button" value="Eliminar lineas">
+    <input id="btn_enviar"onclick="help()" type="button" value="Ver comandos">
+    <input id="btn_enviar"onclick="about()" type="button" value="Acerca de">
+  
+  </div>
   
   
   <!-- Project -->
