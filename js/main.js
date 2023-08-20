@@ -98,12 +98,6 @@ function enviar(entradaValor) {
   entrada.focus();
 }
 
-//Escribe la linea al presionar enter (O aceptar en moviles).
-entrada.addEventListener("keyup", ({key}) => {
-  if (key === "Enter") {
-      enviar();
-  }
-})
 
 //Modifica el texto de la linea conforme se escribe.
 contenedor.addEventListener("keyup", e => {

@@ -14,21 +14,24 @@ body {
 h1{
   font-size: 2rem;
 }
-
 #escribirLineaContenedor{
+  border-radius: 1;
+  padding: 0 0px;
+  margin-bottom: 0rem;
+  transition: all 300ms;
+}
+#escribirLineaContenedor div{
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
   gap: 10px;
-  margin-bottom: 10px;
 }
 #entrada{
+  width: 98%;
   border: none;
   background-color:var(--SecondColor);
   color: var(--principal-color);
   border-radius:5px;
   height: 25px;
-  width: 90%;
   padding:0.4rem 1REM;
   font-size: 1rem;
   letter-spacing: 0.1rem;
@@ -41,6 +44,7 @@ h1{
   transition: all 200ms;
   overflow: hidden;
   margin-left: 12vw;
+  font-size: 1rem;
 }
 #btn_enviar{
   background-color: rgb(37, 37, 37);
