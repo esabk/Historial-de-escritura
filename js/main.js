@@ -36,7 +36,8 @@ function deleteLine(index){
   if (index < lineas.length) {
     lineas.splice(index, 1);
   } else {
-    alertas.textContent = 'ERROR ::: Linea <' + index + '>  no encontrada'
+    alertas.textContent = 'ERROR ::: Linea <' + index + '>  no encontrada';
+    alertas.className="a-error";
   }
 }
 
@@ -46,6 +47,7 @@ function modifyLine(index,value) {
     lineas[index]=value;
   } else {
     alertas.textContent = 'ERROR ::: Linea <' + index + '>  no encontrada'
+    alertas.className="a-error";
   }
 }
 
@@ -60,21 +62,25 @@ function enviar(entradaValor) {
   if (entradaValor=="") {
     console.warn('::: Escribe algo ... Para continuar')
     alertas.textContent='ADVERTENCIA ::: Escribe algo ... Para continuar';
+    alertas.className="a-advertencia";
     EscribeLineas();
     
   }else if(command[0]=="Delete" &&command[1]=='all'){
     lineas=[];
     alertas.textContent='OK ::: Lineas eliminadas correctamente';
+    alertas.className="a-ok";
     EscribeLineas();
     
    }else if(command[0]=="Delete" ){
      
      alertas.textContent='OK ::: Se ha eliminado la linea '+ command[1]+' = '+lineas[command[1]];
+     alertas.className="a-ok";
      deleteLine(command[1]);
      EscribeLineas();
      
    }else if(command[0]=='Modify'){
      alertas.textContent='OK ::: Se modificado la linea: '+ command[1];
+     alertas.className="a-ok";
      let valor = entradaValor.split(':');
       modifyLine(command[1],valor[1]);
       
@@ -85,14 +91,11 @@ function enviar(entradaValor) {
     EscribeLineas();
     
     alertas.textContent='OK :::  '+entrada.value;
+    alertas.className="a-ok";
     entrada.value="";
   }
   
-  
   entrada.focus();
-  console.log('btn ... click');
-  console.log(entrada.value);
-  
 }
 
 //Escribe la linea al presionar enter (O aceptar en moviles).

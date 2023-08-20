@@ -8,7 +8,8 @@ function valorLinea(index) {
         let entradaValorFormula=lineas[index].replace("=","")
         valor=eval(entradaValorFormula);
     } catch (error) {
-        alertas.textContent="ERROR: Linea no encontrada o no es una formula.";
+        alertas.textContent="ERROR: Linea no encontrada o no es una operación aritmetica.";
+        alertas.className="a-error";
     }
     
     return valor;
@@ -23,6 +24,7 @@ entrada.addEventListener("keyup", e => {
     if (entradaValor[0]=="=") {
         entrada.style.color="lawngreen";
         alertas.textContent="OK: Modo formula activo";
+        alertas.className="a-ok";
 
         //Toma el resulatdo de la linea escrita, palabra clave line
         let buscarLine=entrada.value.lastIndexOf("line");
@@ -68,7 +70,6 @@ entrada.addEventListener("keyup", e => {
     }else{
         entradaFormulaResultado.style.height="0px"
         entrada.style.color="white";
-        alertas.textContent="OK: Modo escritura";
     }
     
     

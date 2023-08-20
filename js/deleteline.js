@@ -6,5 +6,6 @@ alertas.textContent="OK: Scripts cargados correctamente..."
 function deleteLineInLine(index){
     deleteLine(index);
     enviar();
-    alertas.textContent='OK: Linea < '+index+' > eliminada'
+    alertas.textContent='OK: Linea < '+index+' > eliminada';
+    alertas.className="a-ok";
 }
