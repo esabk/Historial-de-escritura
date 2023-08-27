@@ -34,7 +34,7 @@
   <h1><img height="24px" src="/android-icon-192x192.png" alt="" srcset="">Escribe</h1>
   <div id="escribirLineaContenedor">
     <div>
-      <input id="entrada"type="text" placeholder="Escribe aqui...">
+      <input id="entrada"type="textarea" placeholder="Escribe aqui...">
       <input id="btn_enviar"onclick="enviar()" type="button" value="Escribir linea">
     </div>
       <p id="entradaFormulaResultado">Resultado</p>
@@ -43,24 +43,19 @@
   
   
   <div class="contenedor" id="contenedor">
-      <p > Escribe , solo escribe, privado, simple. Nada se guarda, nada se comparte</p>
+      <p > Escribe , guarda notas en tantas lineas como quieras.</p>
       <hr>
-      <h2>Novedades</h2>
-      <p><b>MODO FORMULA: </b>Activalo empezando a escribir = , Ejemplo: "=12+1"</p>
-      <p><b>Usa valores de otras lineas: </b>escribe la palabra "line" seguido del indice de linea, Ejemplo:"line0"</p>
-      <h2>Mejoras</h2>
-      <p><b>Nueva interfaz de usuario: </b>Más limpia y legible.</p>
-      <p><b>Nuevo orden de lineas: </b>La ultima linea escrita se guarda despues de la anterior.</p>
-      <p>... Se realizarón mejoras y corrección de fallos menores.</p>
+      <p>Prueba el <b>MODO FORMULA</b>, escribe '=' al empezar una nueva linea</p>
+      <hr>
+      <p>Usa <b>'line'</b> para copiar el resultado de una linea o  <b>'LINE'</b> para copiar una linea.</p>
       
-      <hr>
   </div>
   <p class="a-ok" id="alertas">Aplicacion ha iniciado correctamente...</p>
 
   <!-- Los siguientes botones ejecutan comandos en #entrada -->
   <div class="mini-contenedor">
     <input id="btn_enviar"onclick="enviar('Delete all')" type="button" value="Eliminar lineas">
-    <input id="btn_enviar"onclick="help()" type="button" value="Ver comandos">
+    <input id="btn_enviar"onclick="help()" type="button" value="Ayuda">
     <input id="btn_enviar"onclick="about()" type="button" value="Acerca de">
   
   </div>

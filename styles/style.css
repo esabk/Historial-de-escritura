@@ -35,6 +35,7 @@ h1{
   padding:0.4rem 1REM;
   font-size: 1rem;
   letter-spacing: 0.1rem;
+  resize: none;
 }
 #entrada:focus{
   background-color: var(--focus-color);
@@ -119,7 +120,7 @@ h1{
   color:white;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 800px) {
   body{
     padding: 20px 15vw;
   }

@@ -6,52 +6,64 @@
 // Delete <Numero de Linea > Borra linea
 // Modify <Numero de linea> :<Nuevo texto>
 
+//Se crean lineas en el almacenamiento local
+let lineas=[];
+localStorage.setItem("lineas",JSON.stringify(lineas))
+
 let saludo='Escribe |';
 let entrada=document.getElementById('entrada')
 let contenedor=document.getElementById('contenedor');
 let alertas=document.getElementById('alertas')
 let linea=document.getElementById("l 0");
-let lineas=[];
+let lineasGet=JSON.parse(localStorage.lineas);
 let principalUi = document.getElementById("principalUi");
 
 
 //Agrega el texto de entrada a las lineas (Nueva linea).
 function addLine(value) {
+  lineas=lineasGet;     
   lineas.push(value);
+  localStorage.setItem("lineas",JSON.stringify(lineas));
 }
 
 // Muestra las lineas almacenadas en la variable lineas.
 function EscribeLineas() {
   contenedor.innerHTML = '';
-  for (let i = lineas.length-1; i >= 0 ; i--) {
+  for (let i = lineasGet.length-1; i >= 0 ; i--) {
     console.log(i);
-    contenedor.innerHTML += '<div id="lineaContenedor" ><b class="lineNumber">line ' +i+'  </b>'+'<textarea id="l '+i+'" class="linea">'+lineas[i].replace("=","")+'</textarea><input id="btn_enviar"onclick="deleteLineInLine('+i+')" type="button" value="X"></div>';
+    contenedor.innerHTML += '<div id="lineaContenedor" ><b class="lineNumber">line ' +i+'  </b>'+'<textarea id="l '+i+'" class="linea">'+lineasGet[i].replace("=","")+'</textarea><input id="btn_enviar"onclick="deleteLineInLine('+i+')" type="button" value="X"></div>';
     linea=document.getElementById("l "+i);
     linea.style.height = linea.scrollHeight+"px";
   }
 }
 
+EscribeLineas();
+
 //Borra una linea especifica
 function deleteLine(index){
+  lineas=lineasGet;
   if (index < lineas.length) {
     lineas.splice(index, 1);
   } else {
     alertas.textContent = 'ERROR ::: Linea <' + index + '>  no encontrada';
     alertas.className="a-error";
   }
+  localStorage.setItem("lineas",JSON.stringify(lineas));
 }
 
 //Modifica una linea especifica 
 function modifyLine(index,value) {
   if (index < lineas.length) {
+    lineas=lineasGet;
     lineas[index]=value;
   } else {
     alertas.textContent = 'ERROR ::: Linea <' + index + '>  no encontrada'
     alertas.className="a-error";
   }
+  localStorage.setItem("lineas",JSON.stringify(lineas));
 }
 
-//
+//Crea una nueva linea con lo escrito en entrada
 function enviar(entradaValor) {
   if (entradaValor==null) {
     entradaValor=entrada.value;
@@ -66,7 +78,9 @@ function enviar(entradaValor) {
     EscribeLineas();
     
   }else if(command[0]=="Delete" &&command[1]=='all'){
+    lineas=lineasGet;
     lineas=[];
+    localStorage.setItem("lineas",JSON.stringify(lineas));
     alertas.textContent='OK ::: Lineas eliminadas correctamente';
     alertas.className="a-ok";
     EscribeLineas();
