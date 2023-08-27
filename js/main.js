@@ -37,7 +37,6 @@ function EscribeLineas() {
   }
 }
 
-EscribeLineas();
 
 //Borra una linea especifica
 function deleteLine(index){
